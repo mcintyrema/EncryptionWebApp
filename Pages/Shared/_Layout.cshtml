@@ -7,31 +7,88 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EncryptionWebApp.styles.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>  
 </head>
 <body>
-    <header>
-            <div class="img-heading" id = "overlay">
-                <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
-                    <div class="container">
-                        <a class="navbar-brand" asp-area="" asp-page="/Index">Encryption Calculator</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <ul class="navbar-nav flex-grow-1">
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-           </div>
-    </header>
+   
+  <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+    <div class="container">
+      <a class="navbar-brand" href="#!"><span style="color: #f3f8f7;">Encryption</span><span style="color: #fff;">Calculator</span></a>
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#!"><span style="color: #fff;">DES</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!"><span style="color: #fff;">AES</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!"><span style="color: #fff;">Caesar Cipher</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!"><span style="color: #fff;">Vigenere Cipher</span></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+  <script>
+      $(window).scroll(function(){
+      var scroll = $(window).scrollTop();
+      if(scroll < 300){
+          $('.fixed-top').css('background', 'transparent');
+      } else{
+          $('.fixed-top').css('background', 'rgba(41, 37, 39, 1)');
+      }
+      });
+  </script>
+
+  <!--Section: Design Block-->
+  <section>
+    <!-- Intro -->
+    <div class = "overlay">
+            <div id="intro" class="bg-image vh-100 mask-custom" style="
+                background-image: url('https://wallpapercave.com/wp/wp4770081.jpg');
+                max-height: 380px;
+                background-color: rgba(255, 255, 255, .15);
+                filter: blur(8px);
+                -webkit-filter: blur(8px)
+                ">
+            </div>
+        </div>
+        <div class="centered">Encryption/Decryption Calculator</div>
+        <div class="centered-lower">secure all your needs</div>
+    </div>
+    <!-- Intro -->
+  </section>
+  
+  <!--Section: Design Block-->
+</header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -39,8 +96,25 @@
     </div>
 
     <footer class="border-top footer text-muted">
+        <div class="row">
+          <div class="col-4">
+            <div class="footcol">
+              <h3 style="font-weight: bold;">Sitemap</h3>
+              <ul style="list-style-type: none">
+                <li>DES</li>
+                <li>AES</li>
+                <li>Vigenere
+                  Cipher
+                </li>
+                <li>Caesar
+                  Cipher
+                </li>
+            </ul>
+            </div>
+          </div>
+        </div>
         <div class="container">
-            &copy; 2023 - EncryptionWebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - University of Pittsburgh - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

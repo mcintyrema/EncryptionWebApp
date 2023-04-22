@@ -20,31 +20,185 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-.img-heading {
-  background-image: url("https://wallpapercave.com/wp/wp4770081.jpg");
-  min-height: 380px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
 }
 
-.navbar{
-  float: left; 
-  background-color: transparent;
-  text-align: center;
-  padding: 10px 12px;
-  text-decoration: none;
-  font-size: 17px;
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #050403;
+}
+
+.nav-link:hover {
+  text-decoration: underline white;
+}
+
+/* .mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, .15);
+  min-height: 380;
+
+} */
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+}
+
+.centered {
+  position: absolute;
+  top: 13.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:40px;
+  font-family:'Suez One';
+  color: white;
+}
+
+.centered-lower {
+  position: absolute;
+  top: 17.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30px;
+  font-family:'Suez One';
+  color: white;
+}
+
+.col-5 {
+  display: flex;
+}
+
+.col-2 {
+ display: flex;
+}
+
+.col-3{
+  display: flex;
+}
+
+.row-3 {
+  display: flex;
+}
+
+.custom-select {
+  display: inline-block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem 1.75rem .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  vertical-align: middle;
+  background: #3b3434; 
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #fff;
+  font-family:'Suez One';
+  font-weight: bold;
+  padding-right: 3px;
+}
+
+select.custom-select{
+  appearance: menulist!important;
+}
+
+.custom-select:hover {
+  box-shadow: 5px 5px 5px gray;
+  border-color: #3b3434;
+}
+
+.btn {
+  background-color: #3b3434;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem 1.75rem .375rem 1.75rem;
+  font-size: 1rem;
+  border-color: #495057;
+  font-family:'Suez One';
+  font-weight: bold;
+}
+
+.btn:hover{
+  background-color: #495057;
+  border-color: #3b3434;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.swapButton:hover {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+ }
+
+ /* image 11 */
+img.img-meth{
+position: absolute;
+width: 200px;
+height: 150px;
+box-shadow: 3px 3px 3px gray;
 }
 
 #overlay {
-  width: 100%;
-  height: 100%;
-  color: rgba(0, 0, 0, 1);
-  min-height: 380px;
-  background-size: cover;
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  background-color: rgba(0,0,0,0.67);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.img-container:hover {
+  box-shadow: 0 0 3px black;
+  margin-top: -10px;
+}
+
+.methodOverlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-family: Suez One;
+  font-weight: bold;
+  padding-top: 60px;
 }
 
 
+footer {
+  background-color: #3b3434;
+}
+
+.footcol {
+  padding-top: 20px;
+  padding-left: 1in;
+  font-family: Suez One;
+  color: white;
+}
+
+.footer[b-curc6o78jd] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 25px !important;
+}

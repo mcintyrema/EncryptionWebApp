@@ -4,22 +4,6 @@
     ViewData["Title"] = "Home page";
 }
 <br>
-
-@* <body>
-    <div class="container" style="display: flex; flex-wrap: wrap">
-        <div class="box-1">
-
-        </div>
-        <div class="box-2">
-
-        </div>
-        <div class="box-3">
-
-        </div>
-    </div>
-</body> *@
-
-
 <div class="container-fluid p-0">
     <div class="row">
         <div class="col-5">
@@ -60,7 +44,7 @@
                     </select>
                 </div>
                 <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
-                    <button type="button" class="btn btn-primary btn-lg">ENTER</button>
+                    <button type="button" class="btn btn-primary btn-lg" onclick="getOption()">ENTER</button>
                 </div>
             </div>
         </div>
@@ -122,3 +106,12 @@
 <br>
 <br>
 <br>
+
+<script>
+    function getOption(){
+        selectElement = document.querySelector('#algorithmSelect');
+        output = selectElement.options[selectElement.selectedIndex].value;
+        console.log(output)
+        return output
+    }
+</script>

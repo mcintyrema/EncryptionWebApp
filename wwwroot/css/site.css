@@ -202,3 +202,13 @@ footer {
   white-space: nowrap;
   line-height: 25px !important;
 }
+
+#footbot {
+  width: 100%;
+  padding-top: 2px;
+  background-color: #1b1d20;
+  color: #fff;
+  margin-right: 0%;
+  margin-left: 0%;
+  max-width: 2000px;
+}

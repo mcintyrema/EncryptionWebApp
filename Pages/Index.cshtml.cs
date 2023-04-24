@@ -48,6 +48,12 @@ public class IndexModel : PageModel
         [BindProperty]
         public string TextInput { get; set; }
 
+        [BindProperty]
+        public string key {get; set;}
+
+        [BindProperty]
+        public string IV {get; set;}
+
         public string TextOutput { get; set; }
 
         public void OnGet()
@@ -63,7 +69,9 @@ public class IndexModel : PageModel
                     case "CaesarCipher":
                         TextOutput = CaesarCipherMethod.Encrypt(TextInput);
                         break;
-
+                    case "DES":
+                        TextOutput = DESMethod.Encrypt(TextInput);
+                        break;
                     default:
                         Console.WriteLine("No method was specified.");
                         break;

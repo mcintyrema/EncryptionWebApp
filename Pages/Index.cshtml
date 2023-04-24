@@ -34,7 +34,7 @@
                                 <select id="encryptionMethod" class="custom-select" asp-for="MethodChoice" required>
                                         <option value="">Pick Algorithm</option>
                                         <option value="DES">DES</option>
-                                        <option value="TripleDES">Triple DES</option>
+                                        @* <option value="TripleDES">Triple DES</option> *@
                                         <option value="AES">AES</option>
                                         <option value="CaesarCipher">Caesar Cipher</option>
                                         <option value="VigenereCipher">Vigenere Cipher</option>
@@ -42,12 +42,12 @@
                             </div>
                         </div>
                         <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
-                            <select name="alphabetDropDown" id="alphabetSelect" class="custom-select">
+                            @* <select name="alphabetDropDown" id="alphabetSelect" class="custom-select">
                                     <option value="">Pick Alphabet</option>
                                     <option value="DES">Binary</option>
                                     <option value="TripleDES">Alphabet</option>
                                     <option value="AES">Alphanumeric</option>
-                            </select>
+                            </select> *@
                         </div>
                         <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
                             <button type="submit" class="btn btn-primary btn-lg">ENTER</button>

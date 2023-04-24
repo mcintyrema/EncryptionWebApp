@@ -24,3 +24,5 @@ C:\Users\kenzm\EncryptionWebApp\obj\Debug\net6.0\refint\EncryptionWebApp.dll
 C:\Users\kenzm\EncryptionWebApp\obj\Debug\net6.0\EncryptionWebApp.pdb
 C:\Users\kenzm\EncryptionWebApp\obj\Debug\net6.0\EncryptionWebApp.genruntimeconfig.cache
 C:\Users\kenzm\EncryptionWebApp\obj\Debug\net6.0\ref\EncryptionWebApp.dll
+C:\Users\kenzm\EncryptionWebApp\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\kenzm\EncryptionWebApp\obj\Debug\net6.0\EncryptionWebApp.csproj.CopyComplete

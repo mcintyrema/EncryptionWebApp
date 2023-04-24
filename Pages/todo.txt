@@ -1,0 +1,4 @@
+when swap image clicked, enter decryption mode 
+add other informative Pages
+add navigation to other Pages
+fix combobox styling

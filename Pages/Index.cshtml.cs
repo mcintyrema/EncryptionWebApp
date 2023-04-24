@@ -49,7 +49,7 @@ public class IndexModel : PageModel
         public string TextInput { get; set; }
 
         [BindProperty]
-        public string key {get; set;}
+        private string password {get; set;}
 
         [BindProperty]
         public string IV {get; set;}
@@ -71,6 +71,12 @@ public class IndexModel : PageModel
                         break;
                     case "DES":
                         TextOutput = DESMethod.Encrypt(TextInput);
+                        break;
+                    case "AES":
+                        TextOutput = AESMethod.Encrypt(TextInput);
+                        break;
+                    case "VigenereCipher":
+                        TextOutput = VinCipherMethod.Encrypt(TextInput);
                         break;
                     default:
                         Console.WriteLine("No method was specified.");

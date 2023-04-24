@@ -19,39 +19,51 @@
     <br>
     <br>
     <br>
-    <div class="row" style="display: flex">
-        <div class="col-5">
-            <textarea id="freeform" name="freeform" style="position: absolute; left: 5%; border-width: medium; box-shadow: 5px 5px 5px gray" rows=10 cols=50></textarea>
-        </div>
-        <div class="col-2">
-            <div class="container-fluid p-0">
-                <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
-                    <select name="algorithmDropDown" id="algorithmSelect" class="custom-select">
-                            <option value="">Pick Algorithm</option>
-                            <option value="DES">DES</option>
-                            <option value="TripleDES">Triple DES</option>
-                            <option value="AES">AES</option>
-                            <option value="CaesarCipher">Caesar Cipher</option>
-                            <option value="VigenereCipher">Vigenere Cipher</option>
-                    </select>
+    <section>
+        <form method="post">
+            <div class="row" style="display: flex">
+                <div class="col-5">
+                    <div class="form-choices">
+                        <textarea id="userInput" style="position: absolute; left: 5%; border-width: medium; box-shadow: 5px 5px 5px gray" rows=10 cols=50 asp-for="TextInput" ></textarea>
+                    </div>
                 </div>
-                <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
-                    <select name="alphabetDropDown" id="alphabetSelect" class="custom-select">
-                            <option value="">Pick Alphabet</option>
-                            <option value="DES">Binary</option>
-                            <option value="TripleDES">Alphabet</option>
-                            <option value="AES">Alphanumeric</option>
-                    </select>
+                <div class="col-2">
+                    <div class="container-fluid p-0">
+                        <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
+                            <div class="form-choices">
+                                <select id="encryptionMethod" class="custom-select" asp-for="MethodChoice" required>
+                                        <option value="">Pick Algorithm</option>
+                                        <option value="DES">DES</option>
+                                        <option value="TripleDES">Triple DES</option>
+                                        <option value="AES">AES</option>
+                                        <option value="CaesarCipher">Caesar Cipher</option>
+                                        <option value="VigenereCipher">Vigenere Cipher</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
+                            <select name="alphabetDropDown" id="alphabetSelect" class="custom-select">
+                                    <option value="">Pick Alphabet</option>
+                                    <option value="DES">Binary</option>
+                                    <option value="TripleDES">Alphabet</option>
+                                    <option value="AES">Alphanumeric</option>
+                            </select>
+                        </div>
+                        <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
+                            <button type="submit" class="btn btn-primary btn-lg">ENTER</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="row-3" style="padding-top: 10px; padding-bottom: 20px">
-                    <button type="button" class="btn btn-primary btn-lg" onclick="getOption()">ENTER</button>
+                <div class="col-5">
+                    <div class="form-choices">
+                        <textarea id="freeform" name="freeform" style="position: absolute; right: 5%; border-width: medium; box-shadow: 5px 5px 5px gray" rows=10 cols=50 asp-for="TextOutput" >@Model.TextOutput</textarea>
+                        @* <p>Result: @Model.TextOutput</p> *@
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-5">
-            <textarea id="freeform" name="freeform" style="position: absolute; right: 5%; border-width: medium; box-shadow: 5px 5px 5px gray" rows=10 cols=50></textarea>
-        </div>
-    </div>
+        </form>
+    </section>
+    
     <br>
     <br>
     <br>
@@ -106,12 +118,3 @@
 <br>
 <br>
 <br>
-
-<script>
-    function getOption(){
-        selectElement = document.querySelector('#algorithmSelect');
-        output = selectElement.options[selectElement.selectedIndex].value;
-        console.log(output)
-        return output
-    }
-</script>

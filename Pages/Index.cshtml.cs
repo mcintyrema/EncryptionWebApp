@@ -21,10 +21,7 @@ public class IndexModel : PageModel
         public string TextInput { get; set; }
 
         [BindProperty]
-        private string password {get; set;}
-
-        [BindProperty]
-        public string IV {get; set;}
+        private string key {get; set;}
 
         public string TextOutput { get; set; }
 

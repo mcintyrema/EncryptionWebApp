@@ -212,3 +212,17 @@ footer {
   margin-left: 0%;
   max-width: 2000px;
 }
+
+h2 {
+  font-family: "Suez One";
+  font-weight: bold;
+}
+
+h4 {
+  font-family: "Suez One";
+  font-weight: bold;
+}
+
+p {
+  font-family: "Suez One";
+}

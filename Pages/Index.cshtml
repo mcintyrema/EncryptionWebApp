@@ -79,28 +79,36 @@
     <br>
     <br>
     <div class="row" style="display: flex;">
-        <div class="col-3">
+         <div class="col-3">
             <div class="img-container">
-                <img class="img-meth" src="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_2560%2Cc_limit/163727876.jpg" style="left: 5%;"/>
-                <div id="overlay" style="left: 5%;"><h3 class="methodOverlay">DES</h3></div>
+                <a asp-page="/DES">
+                    <img class="img-meth" src="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_2560%2Cc_limit/163727876.jpg" style="left: 5%;"/>
+                    <div id="overlay" style="left: 5%;"><h3 class="methodOverlay">DES</h3></div>
+                </a>
             </div>
         </div>
         <div class="col-3">
             <div class="img-container">
-                <img class="img-meth" src="https://blog.lumen.com/wp-content/uploads/2019/09/thumbnail-5b8b450c1677680c0accc91fa88bb1f2.jpeg" style="left: 30%;"/>
-                <div id="overlay" style="left: 30%;"><h3 class="methodOverlay">AES</h3></div>
+                <a asp-page="/AES"></a>
+                    <img class="img-meth" src="https://blog.lumen.com/wp-content/uploads/2019/09/thumbnail-5b8b450c1677680c0accc91fa88bb1f2.jpeg" style="left: 30%;"/>
+                    <div id="overlay" style="left: 30%;"><h3 class="methodOverlay">AES</h3></div>
+                </a>
             </div>
         </div>
         <div class="col-3">
             <div class="img-container">
-                <img class="img-meth" src="https://www.thesslstore.com/blog/wp-content/uploads/2018/08/bigstock-Safety-Concept-Pixelated-Key-243299677.jpg" style="right: 30%;"/>
-                <div id="overlay" style="right: 30%;"><h3 class="methodOverlay">Caesar Cipher</h3></div>
+                <a asp-page="/CaesarCipher">
+                    <img class="img-meth" src="https://www.thesslstore.com/blog/wp-content/uploads/2018/08/bigstock-Safety-Concept-Pixelated-Key-243299677.jpg" style="right: 30%;"/>
+                    <div id="overlay" style="right: 30%;"><h3 class="methodOverlay">Caesar Cipher</h3></div>
+                </a>
             </div>
         </div>
         <div class="col-3">
             <div class="img-container">
-                <img class="img-meth" src="https://www.science.org/do/10.1126/science.aaz1998/abs/ca_0823NID_Lock_Numbers_Code_online.jpg" style="right: 5%;"/>
-                <div id="overlay" style="right: 5%;"><h3 class="methodOverlay">Vigenere Cipher</h3></div>
+                <a asp-page="/VigenereCipher">
+                    <img class="img-meth" src="https://www.science.org/do/10.1126/science.aaz1998/abs/ca_0823NID_Lock_Numbers_Code_online.jpg" style="right: 5%;"/>
+                    <div id="overlay" style="right: 5%;"><h3 class="methodOverlay">Vigenere Cipher</h3></div>
+                </a>
             </div>
         </div>
     </div>

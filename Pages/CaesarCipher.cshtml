@@ -1,36 +1,36 @@
-﻿@page
+@page
 @model IndexModel
 @{
-    ViewData["Title"] = "DES page";
+    ViewData["Title"] = "Caesar page";
 }
 <br>
 <section>
     <div class="row" style="display: flex">
-        <h2>DES Encryption</h2>
+        <h2>Caesar Cipher</h2>
     </div>
     <div class="row" style="display: flex">
-        <h4>Intro to DES Encryption</h4>
+        <h4>Intro to the Caesar Cipher</h4>
     </div>
     <div class="row" style="display: flex">
-        <p>Data encryption standard (DES) has been found vulnerable to very powerful attacks and therefore, the popularity of DES has been found slightly on the decline. 
-        DES is a block cipher and encrypts data in blocks of size of 64 bits each, which means 64 bits of plain text go as the input to DES, which produces 64 bits of ciphertext. 
-        The same algorithm and key are used for encryption and decryption, with minor differences. The key length is 56 bits. 
-        Actually, The initial key consists of 64 bits. However, before the DES process even starts, every 8th bit of the key is discarded to produce a 56-bit key. That is bit positions 8, 16, 24, 32, 40, 48, 56, and 64 are discarded. 
-        Thus, the discarding of every 8th bit of the key produces a 56-bit key from the original 64-bit key.
-        DES is based on the two fundamental attributes of cryptography: substitution (also called confusion) and transposition (also called diffusion). DES consists of 16 steps, each of which is called a round. Each round performs the steps of substitution and transposition.
-        </p>
+        <p>The Caesar Cipher technique is one of the earliest and simplest methods of encryption technique. It’s simply a type of substitution cipher, i.e., each letter of a given text is replaced by a letter with a fixed number of positions down the alphabet. For example with a shift of 1, A would be replaced by B, B would become C, and so on. The method is apparently named after Julius Caesar, who apparently used it to communicate with his officials. 
+
+        Thus to cipher a given text we need an integer value, known as a shift which indicates the number of positions each letter of the text has been moved down. 
+        The encryption can be represented using modular arithmetic by first transforming the letters into numbers, according to the scheme, A = 0, B = 1,…, Z = 25. Encryption of a letter by a shift n can be described mathematically as. 
+
+        E_n(x)=(x+n)mod\ 26              
+        (Encryption Phase with shift n)
+
+        D_n(x)=(x-n)mod\ 26              
+        (Decryption Phase with shift n)</p>
     </div>
     <div class="row" style="display: flex">
         <h4>How it Works</h4>
     </div>
     <div class="row" style="display: flex">
-        <p>TIn the first step, the 64-bit plain text block is handed over to an initial Permutation (IP) function.
-    The initial permutation is performed on plain text.
-    Next, the initial permutation (IP) produces two halves of the permuted block; saying Left Plain Text (LPT) and Right Plain Text (RPT).
-    Now each LPT and RPT go through 16 rounds of the encryption process.
-    In the end, LPT and RPT are rejoined and a Final Permutation (FP) is performed on the combined block
-    The result of this process produces 64-bit ciphertext.
-    </p>
+        <p>Traverse the given text one character at a time .
+            For each character, transform the given character as per the rule, depending on whether we’re encrypting or decrypting the text.
+            Return the new string generated.
+            A program that receives a Text (string) and Shift value( integer) and returns the encrypted text. </p>
     </div>
     <div class="row" style="display: flex">
         <h4>Advantages</h4>
@@ -39,16 +39,16 @@
         <p>
             <ul>
                 <li>
-                    DES has been around a long time (since 1978) and has been studied to death. Even now no real weaknesses have been found: the most efficient attack is still brute force.
+                    Easy to implement and use thus, making suitable for beginners to learn about encryption.
                 </li>
                 <li>
-                    DES is an official United States Government standard; the Government is required to re-certifyDES every five years and ask it be replaced if necessary. DES has been re-certified in 1983, 1987, 1992.
+                    Can be physically implemented, such as with a set of rotating disks or a set of cards, known as a scytale, which can be useful in certain situations.
                 </li>
                 <li>
-                    The 8 S-boxes used in each round were not made public and even it impossible for any to discover the design of the s-boxes which makes the attack more impossible.
+                    Requires only a small set of pre-shared information.
                 </li>
                 <li>
-                    The number of rounds in DES increases the complexity of the algorithm.
+                    Can be modified easily to create a more secure variant, such as by using a multiple shift values or keywords.
                 </li>
             </ul>
 
@@ -61,13 +61,22 @@
         <p>
             <ul>
                 <li>
-                    The 56-bit key size is the biggest defect of DES. Chips to perform one million of DES encrypt or decrypt operations a second are available (in 1993). A $1 million DES cracking machine can search the entire keyspace in about 7 hours
+                    It is not secure against modern decryption methods.          
                 </li>
                 <li>
-                    Hardware implementations of DES are very fast; DES was not designed for software and hence runs relatively slowly.
+                    Vulnerable to known-plaintext attacks, where an attacker has access to both the encrypted and unencrypted versions of the same messages.
                 </li>
                 <li>
                     The small number of possible keys means that an attacker can easily try all possible keys until the correct one is found, making it vulnerable to a brute force attack.
+                </li>
+                <li>
+                    It is not suitable for long text encryption as it would be easy to crack.
+                </li>
+                <li>
+                    It is not suitable for secure communication as it is easily broken.
+                </li>
+                <li>
+                    Does not provide confidentiality, integrity, and authenticity in a message.
                 </li>
             </ul>
         </p>

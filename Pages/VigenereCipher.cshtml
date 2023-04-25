@@ -1,0 +1,106 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Vigenere page";
+}
+<br>
+<section>
+    <div class="row" style="display: flex">
+        <h2>Vigenere Cipher</h2>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Intro to the Vigenere Cipher</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>Vigenere Cipher is a method of encrypting alphabetic text. It uses a simple form of polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets. The encryption of the original text is done using the Vigenère square or Vigenère table.
+        The table consists of the alphabets written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar Ciphers.
+        At different points in the encryption process, the cipher uses a different alphabet from one of the rows.
+        The alphabet used at each point depends on a repeating keyword.</p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>How it Works</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>The first letter of the plaintext, G is paired with A, the first letter of the key. 
+            So use row G and column A of the Vigenère square, namely G. 
+            Similarly, for the second letter of the plaintext, the second letter of the key is used, the letter at row E, and column Y is C. The rest of the plaintext is enciphered in a similar fashion.  </p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Advantages</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>
+          The strength of the Vigenère cipher is that it is not susceptible to frequency analysis due to the fact that the cipher rotates through different shifts, so the same plaintext letter will not always be encrypted to the same ciphertext letter.
+
+        </p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Disadvantages</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>
+            The drawback of Algorithm Vigenere Cipher is if the key length is smaller than the plaintext length, then the key will be repeated, because it most likely will produce the same ciphertext as long as the same plaintext.
+        </p>
+    </div>
+</section>
+    
+<br>
+<br>
+</div>
+<div class="container-fluid p-0">
+    <div class="row" style="display: flex">
+        <h2 class="methods" style="position: absolute; font-family:'Suez One'; font-weight: 800; text-shadow: 0.75px 1px 5px grey; text-decoration: underline; left: 35%">Learn the Methodologies</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row" style="display: flex;">
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/DES">
+                    <img class="img-meth" src="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_2560%2Cc_limit/163727876.jpg" style="left: 5%;"/>
+                    <div id="overlay" style="left: 5%;"><h3 class="methodOverlay">DES</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/AES"></a>
+                    <img class="img-meth" src="https://blog.lumen.com/wp-content/uploads/2019/09/thumbnail-5b8b450c1677680c0accc91fa88bb1f2.jpeg" style="left: 30%;"/>
+                    <div id="overlay" style="left: 30%;"><h3 class="methodOverlay">AES</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/CaesarCipher">
+                    <img class="img-meth" src="https://www.thesslstore.com/blog/wp-content/uploads/2018/08/bigstock-Safety-Concept-Pixelated-Key-243299677.jpg" style="right: 30%;"/>
+                    <div id="overlay" style="right: 30%;"><h3 class="methodOverlay">Caesar Cipher</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/VigenereCipher">
+                    <img class="img-meth" src="https://www.science.org/do/10.1126/science.aaz1998/abs/ca_0823NID_Lock_Numbers_Code_online.jpg" style="right: 5%;"/>
+                    <div id="overlay" style="right: 5%;"><h3 class="methodOverlay">Vigenere Cipher</h3></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

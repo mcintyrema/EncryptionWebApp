@@ -15,7 +15,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
     <div class="container">
-      <a class="navbar-brand" href="#!"><span style="color: #f3f8f7;">Encryption</span><span style="color: #fff;">Calculator</span></a>
+      <a class="navbar-brand" asp-page="/Index"><span style="color: #f3f8f7;">Encryption</span><span style="color: #fff;">Calculator</span></a>
       <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -24,16 +24,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#!"><span style="color: #fff;">DES</span></a>
+            <a class="nav-link" asp-page="/DES"><span style="color: #fff;">DES</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!"><span style="color: #fff;">AES</span></a>
+            <a class="nav-link" asp-page="/AES"><span style="color: #fff;">AES</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!"><span style="color: #fff;">Caesar Cipher</span></a>
+            <a class="nav-link" asp-page="/CaesarCipher"><span style="color: #fff;">Caesar Cipher</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#!"><span style="color: #fff;">Vigenere Cipher</span></a>
+            <a class="nav-link" asp-page="/VigenereCipher"><span style="color: #fff;">Vigenere Cipher</span></a>
           </li>
         </ul>
         <ul class="navbar-nav d-flex flex-row">
@@ -102,14 +102,22 @@
               <h3 style="font-weight: bold;">Sitemap</h3>
               <div style="font-weight: bold;">All our pages</div>
               <ul style="list-style-type: none">
-                <li>DES</li>
-                <li>AES</li>
-                <li>Vigenere
-                  Cipher
-                </li>
-                <li>Caesar
-                  Cipher
-                </li>
+                <a asp-page="/DES">
+                  <li>DES</li>
+                </a>
+                <a asp-page="/AES">
+                  <li>AES</li>
+                </a>
+                <a asp-page="/VigenereCipher">
+                  <li>Vigenere
+                    Cipher
+                  </li>
+                </a>
+                <a asp-page="/CaesarCipher">
+                  <li>Caesar
+                    Cipher
+                  </li>
+                </a>
              </ul>
             </div>
           </div>

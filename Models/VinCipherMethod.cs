@@ -1,85 +1,183 @@
+// using System;
+// using System.Collections.Generic;
+// using System.Linq;
+// using System.Text;
+// using System.Threading.Tasks;
+// using System.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-
 
 namespace EncryptionWebApp.Models
 {
     public class VinCipherMethod
     {
+   
+
+        public VinCipherMethod() { }
         
-    public VinCipherMethod()
+        public static String Encrypt(String inputString, String key="thisisakey")
         {
-        }
+            int tableRowSize = 26;
+            int tableColumnSize = 26;
 
-        private static bool CheckIfEmptyString(string Text, string Key = "thisisakey") 
-        {
-                if (string.IsNullOrEmpty(Key) || string.IsNullOrWhiteSpace(Key)) {
-                    return false;
-            }
-                if (string.IsNullOrEmpty(Text) || string.IsNullOrWhiteSpace(Text)) {
-                    return false;
-                }
-                return true;
-            }
+            int[,] vignereTable = new int[26,26];
 
-        public static string Encrypt(string Text, string Key = "thisisakey") {
-            try
+            for (int rows = 0; rows < tableRowSize; rows++)
             {
-                string EncryptedText = "", CipheredText = "";
-
-                int TNumValue,
-                    KNumValue, 
-                    ASCIIofa = 97, 
-                    ASCIIofA = 65, 
-                    lettersInAlphabet = 26; 
-
-                if (CheckIfEmptyString(Key, Text))
+                for (int columns = 0; columns < tableColumnSize; columns++)
                 {
-
-                    for (int i = 0, j = 0; i < Text.Length; i++)
-                    {
-
-                        if (Text.ElementAt(i) >= 'a' && Text.ElementAt(i) <= 'z')
-                        {
-                            KNumValue = ((int)(Key.ElementAt(j))) - ASCIIofa;
-                            TNumValue = ((int)(Text.ElementAt(i))) - ASCIIofa;
-
-                            j++;
-                            j %= Key.Length;
-
-                            TNumValue = (TNumValue + KNumValue) % lettersInAlphabet;
-                            CipheredText += (char)(TNumValue + ASCIIofa);
-                        }
-                        else if (Text.ElementAt(i) >= 'A' && Text.ElementAt(i) <= 'Z')
-                        { 
-
-                            KNumValue = ((int)(Key.ElementAt(j))) - ASCIIofA;
-                            TNumValue = ((int)(Text.ElementAt(i))) - ASCIIofA;
-
-                            j++;
-                            j %= Key.Length;
-
-                            TNumValue = (TNumValue + KNumValue) % lettersInAlphabet;
-                            CipheredText += (char)(TNumValue + ASCIIofA);
-                        }
-                        else
-                        {
-                            CipheredText += Text.ElementAt(i);
-                        }
-                    }
-                    EncryptedText = CipheredText;
-                    return EncryptedText;
+                    vignereTable[rows, columns] = (rows + columns) % 26;
                 }
-                else { return "Error: Key or Text value is blank."; }
             }
-            catch (Exception E)
+
+            inputString = inputString.ToUpper();
+            key = key.ToUpper();
+
+            String cipherText = "";
+            int keyIndex = 0;
+
+            for (int instrTextIndex = 0; instrTextIndex < inputString.Length; instrTextIndex++)
             {
-                return "Error: " + E.Message;
+                char instrChar = inputString[instrTextIndex];
+                int asciival = (int) instrChar;
+
+                if (instrChar == ' ')
+                {
+                    cipherText += instrChar;   
+                    continue;
+                }
+                if (Char.IsPunctuation(instrChar))
+                {
+                    cipherText += instrChar;
+                    continue;
+                }
+                if (asciival == 13)
+                {
+                    cipherText += "\r";
+                    continue;
+                }
+                if (asciival == 10)
+                {
+                    cipherText += "\n";
+                    continue;
+                }
+                if (asciival == 9)
+                {
+                    cipherText += "\t";
+                    continue;
+                }
+                if(asciival < 65 || asciival > 90)
+                {
+                    cipherText += instrChar;
+                    continue;
+                }
+
+                int basicInputStringValue = ((int)instrChar) - 65;
+                char kChar = key[keyIndex];
+                int basicKeyValue = ((int)kChar) - 65;
+
+                int tableEntry = vignereTable[basicInputStringValue,basicKeyValue];
+
+                char cChar = (char)(tableEntry + 65);
+                cipherText += cChar;
+                keyIndex++;
+
+                if (keyIndex == key.Length)
+                    keyIndex = 0;
+
             }
+
+            return cipherText;
         }
+        public static String Decrypt(String cipherText, String key="yekasisiht")
+        {
+            int tableRowSize = 26;
+            int tableColumnSize = 26;
+
+            int[,] vignereTable = new int[26, 26];
+
+            for (int rows = 0; rows < tableRowSize; rows++)
+            {
+                for (int columns = 0; columns < tableColumnSize; columns++)
+                {
+                    vignereTable[rows, columns] = (rows + columns) % 26;
+                }
+            }
+
+             cipherText = cipherText.ToUpper();
+             key = key.ToUpper();
+
+            String decipherText = "";
+            int keyIndex = 0;
+
+            for (int ctextIndex = 0; ctextIndex < cipherText.Length; ctextIndex++)
+            {
+                char cChar = cipherText[ctextIndex];
+                int asciival = (int)cChar;
+
+                if (cChar == ' ')
+                {
+                    decipherText += cChar;
+					continue;
+                }
+				if (Char.IsNumber(cChar))
+				{
+					decipherText += cChar;
+					continue;
+				}
+                if (Char.IsPunctuation(cChar))
+                {
+                    decipherText += cChar;
+                    continue;
+                }
+                if (asciival == 13)
+                {
+                    decipherText += "\r";
+                    continue;
+                }
+                if (asciival == 10)
+                {
+                    decipherText += "\n";
+                    continue;
+                }
+                if (asciival == 9)
+                {
+                    decipherText += "\t";
+                    continue;
+                }
+                if (asciival < 65 || asciival > 90)
+                {
+                    decipherText += asciival;
+                    continue;
+                }
+
+                int basicCipherTextValue = ((int)cChar) - 65;
+                char kChar = key[keyIndex];
+                int basicKeyValue = ((int)kChar) - 65;
+
+                for (int dctIndex = 0; dctIndex < tableColumnSize; dctIndex++)
+                {
+                    if (vignereTable[basicKeyValue, dctIndex] == basicCipherTextValue)
+                    {
+                        char potcChar = (char)(vignereTable[basicKeyValue, dctIndex] + 65);
+                        char potdChar = (char)(dctIndex + 65);
+
+                        decipherText += potdChar;
+                    }
+                }
+                keyIndex++;
+
+                if (keyIndex == key.Length)
+                    keyIndex = 0;
+            }
+
+            return decipherText;
+        }
+
+        
     }
+    
 }

@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Security.Cryptography;
 using EncryptionWebApp.Models;
 
 namespace EncryptionWebApp.Pages;
 
-public class IndexModel : PageModel
+public class Index2Model : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly ILogger<Index2Model> _logger;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public Index2Model(ILogger<Index2Model> logger)
     {
         _logger = logger;
     }
@@ -39,35 +39,22 @@ public class IndexModel : PageModel
                 switch (MethodChoice)
                 {
                     case "CaesarCipher":
-                        TextOutput = CaesarCipherMethod.Encrypt(TextInput);
+                        TextOutput = CaesarCipherMethod.Decrypt(TextInput);
                         break;
                     case "DES":
-                        TextOutput = DESMethod.Encrypt(TextInput);
+                        TextOutput = DESMethod.Decrypt(TextInput);
                         break;
                     case "AES":
-                        TextOutput = AESMethod.Encrypt(TextInput);
+                        TextOutput = AESMethod.Decrypt(TextInput);
                         break;
                     case "VigenereCipher":
-                        TextOutput = VinCipherMethod.Encrypt(TextInput);
+                        TextOutput = VinCipherMethod.Decrypt(TextInput);
                         break;
                     default:
                         Console.WriteLine("No method was specified.");
                         break;
                 }
             
-            
-                // switch (MethodChoice)
-                // {
-                //     case "caesarCipher":
-                //         TextOutput = CaesarCipherMethod.Decrypt(TextInput);
-                //         break;
-
-                //     default:
-                //         Console.WriteLine("No method was specified.");
-                //         break;
-                // }
-            
-
             return Page();
         }
     

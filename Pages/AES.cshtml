@@ -1,0 +1,172 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "AES page";
+}
+<br>
+<section>
+    <div class="row" style="display: flex">
+        <h2>DES Encryption</h2>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Intro to AES Encryption</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>Advanced Encryption Standard (AES) is a specification for the encryption of electronic data established by the U.S National Institute of Standards and Technology (NIST) in 2001. AES is widely used today as it is a much stronger than DES and triple DES despite being harder to implement.
+
+Points to remember
+
+AES is a block cipher.
+The key size can be 128/192/256 bits.
+Encrypts data in blocks of 128 bits each.
+That means it takes 128 bits as input and outputs 128 bits of encrypted cipher text as output. AES relies on substitution-permutation network principle which means it is performed using a series of linked operations which involves replacing and shuffling of the input data.
+
+Working of the cipher :
+AES performs operations on bytes of data rather than in bits. Since the block size is 128 bits, the cipher processes 128 bits (or 16 bytes) of the input data at a time.
+The number of rounds depends on the key length as follows :
+
+128 bit key – 10 rounds,
+192 bit key – 12 rounds,
+256 bit key – 14 rounds,
+        </p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>How it Works</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>A Key Schedule algorithm is used to calculate all the round keys from the key. So the initial key is used to create many different round keys which will be used in the corresponding round of the encryption.
+            AES considers each block as a 16 byte (4 byte x 4 byte = 128 ) grid in a column major arrangement.
+            Each round comprises of 4 steps :
+
+SubBytes
+ShiftRows
+MixColumns
+Add Round Key
+The last round doesn’t have the MixColumns round.
+
+The SubBytes does the substitution and ShiftRows and MixColumns performs the permutation in the algorithm.
+
+SubBytes  :
+This step implements the substitution.
+
+In this step each byte is substituted by another byte. Its performed using a lookup table also called the S-box. This substitution is done in a way that a byte is never substituted by itself and also not substituted by another byte which is a compliment of the current byte. The result of this step is a 16 byte (4 x 4 ) matrix like before.
+The next two steps implement the permutation.
+
+ShiftRows :
+This step is just as it sounds. Each row is shifted a particular number of times.
+
+The first row is not shifted
+The second row is shifted once to the left.
+The third row is shifted twice to the left.
+The fourth row is shifted thrice to the left.
+(A left circular shift is performed.)
+MixColumns :
+This step is basically a matrix multiplication. Each column is multiplied with a specific matrix and thus the position of each byte in the column is changed as a result.
+
+This step is skipped in the last round.
+Add Round Keys :
+Now the resultant output of the previous stage is XOR-ed with the corresponding round key. Here, the 16 bytes is not considered as a grid but just as 128 bits of data.
+After all these rounds 128 bits of encrypted data is given back as output. This process is repeated until all the data to be encrypted undergoes this process.
+    </p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Advantages</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>
+            <ul>
+                <li>
+                    It uses higher length key sizes such as 128, 192 and 256 bits for encryption. Hence it makes AES algorithm more robust against hacking.
+                </li>
+                <li>
+                    It is most common security protocol used for wide variety of applications such as wireless communication, financial transactions, e-business, encrypted data storage etc.
+                </li>
+                <li>
+                    It is one of the most widely used commercial and open source solutions across the world.
+                </li>
+                <li>
+                    For 128 bit, about 2128 attempts are needed to break. This makes it very difficult to hack it as a result it is very safe protocol.
+                </li>
+            </ul>
+
+        </p>
+    </div>
+    <div class="row" style="display: flex">
+        <h4>Disadvantages</h4>
+    </div>
+    <div class="row" style="display: flex">
+        <p>
+            <ul>
+                <li>
+                    It uses too simple algebraic structure.
+                </li>
+                <li>
+                    Every block is always encrypted in the same way.
+                </li>
+                <li>
+                    AES in counter mode is complex to implement in software taking both performance and security into considerations.
+            </ul>
+        </p>
+    </div>
+</section>
+    
+<br>
+<br>
+</div>
+<div class="container-fluid p-0">
+    <div class="row" style="display: flex">
+        <h2 class="methods" style="position: absolute; font-family:'Suez One'; font-weight: 800; text-shadow: 0.75px 1px 5px grey; text-decoration: underline; left: 35%">Learn the Methodologies</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row" style="display: flex;">
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/DES">
+                    <img class="img-meth" src="https://media.wired.com/photos/593320d858b0d64bb35d4655/master/w_2560%2Cc_limit/163727876.jpg" style="left: 5%;"/>
+                    <div id="overlay" style="left: 5%;"><h3 class="methodOverlay">DES</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/AES"></a>
+                    <img class="img-meth" src="https://blog.lumen.com/wp-content/uploads/2019/09/thumbnail-5b8b450c1677680c0accc91fa88bb1f2.jpeg" style="left: 30%;"/>
+                    <div id="overlay" style="left: 30%;"><h3 class="methodOverlay">AES</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/CaesarCipher">
+                    <img class="img-meth" src="https://www.thesslstore.com/blog/wp-content/uploads/2018/08/bigstock-Safety-Concept-Pixelated-Key-243299677.jpg" style="right: 30%;"/>
+                    <div id="overlay" style="right: 30%;"><h3 class="methodOverlay">Caesar Cipher</h3></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="img-container">
+                <a asp-page="/VigenereCipher">
+                    <img class="img-meth" src="https://www.science.org/do/10.1126/science.aaz1998/abs/ca_0823NID_Lock_Numbers_Code_online.jpg" style="right: 5%;"/>
+                    <div id="overlay" style="right: 5%;"><h3 class="methodOverlay">Vigenere Cipher</h3></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

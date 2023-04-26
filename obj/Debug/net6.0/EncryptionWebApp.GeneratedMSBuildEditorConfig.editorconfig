@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\kenzm\EncryptionWebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/kenzm/EncryptionWebApp/Pages/AES.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQUVTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kenzm/EncryptionWebApp/Pages/CaesarCipher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2Flc2FyQ2lwaGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

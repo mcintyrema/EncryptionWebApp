@@ -40,9 +40,11 @@ public class Index2Model : PageModel
                         break;
                     case "DES":
                         TextOutput = DESMethod.Decrypt(TextInput);
+                        // TextOutput = "hello world";
                         break;
                     case "AES":
                         TextOutput = AESMethod.Decrypt(TextInput);
+                        // TextOutput = "hello world";
                         break;
                     case "VigenereCipher":
                         TextOutput = VinCipherMethod.Decrypt(TextInput);
